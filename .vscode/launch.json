@@ -23,8 +23,8 @@
     {
         "type": "node",
         "request": "launch",
-        "name": "Launch Program",
-        "program": "${workspaceFolder}/lib/main.js"
+        "name": "Launch Google Sample",
+        "program": "${workspaceFolder}/samples/main.js"
     }
     ]
 }
