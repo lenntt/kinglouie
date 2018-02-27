@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm test",
     "test": "npm run lint && mocha --recursive",
-    "testWithCoverage": "npm run lint && nyc --reporter=text --reporter=html mocha --recursive",
+    "testWithCoverage": "npm run lint && nyc --reporter=lcov --reporter=text --reporter=html mocha --recursive",
     "lint": "eslint ."
   },
   "keywords": [
