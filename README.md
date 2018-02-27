@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/lenntt/kinglouie.svg?branch=master)](https://travis-ci.org/lenntt/kinglouie)
 <a href="https://codeclimate.com/github/lenntt/kinglouie/maintainability"><img src="https://api.codeclimate.com/v1/badges/50c727a3e8fc14e07dac/maintainability" /></a>
 <a href="https://codeclimate.com/github/lenntt/kinglouie/test_coverage"><img src="https://api.codeclimate.com/v1/badges/50c727a3e8fc14e07dac/test_coverage" /></a>
 
