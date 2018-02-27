@@ -1,0 +1,38 @@
+[
+    {
+        "_label": {
+            "_name": "?pre",
+            "_id": "?pre",
+            "_response": false,
+            "_quiescence": false,
+            "_parameters": []
+        },
+        "_metadata": {
+            "timestamp": 1518196457067
+        }
+    },
+    {
+        "_label": {
+            "_name": "!error_a11y",
+            "_id": "!error_a11y",
+            "_response": true,
+            "_quiescence": false,
+            "_parameters": []
+        },
+        "_metadata": {
+            "timestamp": 1518196458897
+        }
+    },
+    {
+        "_label": {
+            "_name": "?click",
+            "_id": "?click",
+            "_response": false,
+            "_quiescence": false,
+            "_parameters": []
+        },
+        "_metadata": {
+            "timestamp": 1518196460159
+        }
+    }
+]

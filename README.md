@@ -1,46 +1,57 @@
+# Description
+
+Your exploratory test monkey that becomes smarter over time.
+
+_King Louie:_
+>_Oh, oobee doo_<br/>
+>_I wanna be like you_<br/>
+>_I wanna walk like you_<br/>
+>_Talk like you, too_<br/>
+>_You'll see it's true_<br/>
+>_An ape like me_<br/>
+>_Can learn to be human too_
+
+
 # Prerequisites
 
-* Node >= 8 (depending on `async` and using es6)
+* `nodejs` >= 8 (depending on `async` and using es6), with `npm`
 * Chrome
 
+# To run
+
+clone this repo and
+```
+npm install
+npm test
+node samples/google/main.js
+```
+
+![screenshot](screen.png)
+
+# Definitions
+
+## The Labelled Transition System
+* A `Model` (Labeled Transition System), consists of:
+    * `Label`s
+        * A label is either a `stimulus` (e.g. click), a `response` (e.g. an error), or `quiesence` (δ, absence of any output).
+        * Can define parameters
+    * `State`s
+        * Which have outgoing `Transition`s
+            * Which have a `from` state, a `label`, and a `to` state.
+            * May have a `guard` which specifies conditions on label parameters
+        * One state is the `initialState`
+* An `InstantiatedLabel` is a label, but with actual data and meta data.
+* A `Trace` is a list of observed `InstantiatedLabel`s.
+
+## The Adapter
+You must implement an `Adapter`, which is an object that has async functions `preamble`, `waitForOutput` and `determineState`. See samples (samples/google/main.js).
+The `adapter` folder contains predefined methods to interact with a page.
+
+## KingLouie
+Is using your `Adapter` and builds up an observation `Model`.
 
 
-
-TODO:
-    * tests on
-        * [ ] consolecheck
-    * guards
-        * [ ] in ILabels
-        * [ ] in visualizer
-    * open/reopen
-        * [ ] trace to file
-        * [ ] trace from file
-    * errors:
-        * [ ] recoverable vs non-recoverable
-        * [ ] visualizer -> make error very visual
-    * checks:
-        * [ ] console errors
-        * [ ] link went external (not in new tab)
-        * [ ] a11y validation
-        * [ ] html validation
-    * better inital interaction:
-        * [ ] smarter click strategy
-        * [ ] input typer/form filler
-    * documentation:
-        * [ ] API
-        * [ ] Tutorial
-    * Sample apps:
-        * [ ] ibm.com
-        * [ ] Google.com
-        * [ ] ?
-    * visualizer:
-        * [ ] states clickable (https://bobswift.atlassian.net/wiki/spaces/GVIZ/pages/30703801/How+to+add+links+to+graphviz+images)
-        * [ ] set styles/options as object parameter
-    * other:
-        * [ ] calculate coverage & annotate in visualzer
-        * [ ] shortest path to ...
-        * [ ] instead (or complementary to?) 'state', fold by simulation. Tange11
-        * [ ] a CLI
-        * [ ] switch to newly opened windows?
-        * [ ] support iframes?
+# Known limitations
+- Kinglouie does not interact with iframes or new windows (popups).
+- Kinglouie does not handle modal dialogs (e.g. `alert()`);
 

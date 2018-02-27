@@ -1,0 +1,43 @@
+{
+  "name": "kinglouie",
+  "version": "1.0.0",
+  "description": "a smart wmonkey tester for web applications",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm test",
+    "test": "npm run lint && mocha --recursive",
+    "testWithCoverage": "npm run lint && nyc --reporter=text --reporter=html mocha --recursive",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "test",
+    "selenium",
+    "exploratory",
+    "webapp",
+    "model-based",
+    "modeling",
+    "analysis",
+    "testing",
+    "end-to-end",
+    "e2e",
+    "reverse-engineering"
+  ],
+  "author": "Lennart Tange",
+  "license": "MIT",
+  "devDependencies": {
+    "chai-as-promised": "^7.1.1",
+    "commander": "^2.13.0",
+    "eslint": "^4.15.0",
+    "mocha": "^4.1.0",
+    "nyc": "^11.4.1",
+    "sinon": "^4.2.1",
+    "sinon-chai": "^2.14.0"
+  },
+  "dependencies": {
+    "axe-webdriverjs": "^1.3.0",
+    "chai": "^4.1.2",
+    "chromedriver": "^2.35.0",
+    "d3-graphviz": "^1.3.3",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}
