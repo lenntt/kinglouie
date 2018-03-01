@@ -140,7 +140,6 @@ module.exports = {
         "no-extend-native": "error",
         "no-extra-bind": "error",
         "no-extra-label": "error",
-        "no-extra-parens": "error",
         "no-floating-decimal": "error",
         "no-implicit-coercion": "error",
         "no-implicit-globals": "error",
@@ -302,7 +301,8 @@ module.exports = {
         "no-ternary": "off",
         "multiline-ternary": "off",
         "object-shorthand": "off",
-        "max-params": ["error", 4]
+        "max-params": ["error", 4],
+        "no-extra-parens": "off"
     },
 
     "overrides": [{
