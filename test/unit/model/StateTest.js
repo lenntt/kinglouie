@@ -1,8 +1,8 @@
 const expect = require('chai').expect;
 
-const Label = require('../../lib/model/Label');
-const Transition = require('../../lib/model/Transition');
-const State = require('../../lib/model/State');
+const Label = require('../../../lib/model/Label');
+const Transition = require('../../../lib/model/Transition');
+const State = require('../../../lib/model/State');
 
 describe('State', function() {
     var state;

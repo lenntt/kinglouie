@@ -4,10 +4,10 @@ const sinonChai = require('sinon-chai');
 chai.use(sinonChai);
 const expect = chai.expect;
 
-const StateStrategy = require('../../lib/adapter/StateStrategy');
+const StateStrategy = require('../../../lib/adapter/StateStrategy');
 
-const Driver = require('../TestDriver');
-const Element = require('../TestElement');
+const Driver = require('../../TestDriver');
+const Element = require('../../TestElement');
 
 
 describe('StateStrategy', function() {

@@ -1,8 +1,8 @@
 const expect = require('chai').expect;
 
-const Trace = require('../../lib/model/Trace');
-const Label = require('../../lib/model/Label');
-const InstantiatedLabel = require('../../lib/model/InstantiatedLabel');
+const Trace = require('../../../lib/model/Trace');
+const Label = require('../../../lib/model/Label');
+const InstantiatedLabel = require('../../../lib/model/InstantiatedLabel');
 
 describe('Trace', function() {
     var ilabel, label, trace;
@@ -29,7 +29,7 @@ describe('Trace', function() {
     describe('.fromFile', function() {
         describe('when the ilabels in the file have no label parameters', function() {
             it('returns the trace instantiated from the file', function() {
-                trace = Trace.fromFile('./test/model/testdata/trace1.json');
+                trace = Trace.fromFile('./test/unit/model/testdata/trace1.json');
                 expect(trace).to.have.lengthOf(3);
 
                 var preamble = trace[0];

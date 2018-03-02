@@ -6,9 +6,9 @@ chai.use(chaiAsPromised);
 chai.use(sinonChai);
 const expect = chai.expect;
 
-const Driver = require('../../TestDriver');
-const Element = require('../../TestElement');
-const RandomClick = require('../../../lib/adapter/actions/RandomClick');
+const Driver = require('../../../TestDriver');
+const Element = require('../../../TestElement');
+const RandomClick = require('../../../../lib/adapter/actions/RandomClick');
 
 describe('RandomClick', function() {
     var driver;

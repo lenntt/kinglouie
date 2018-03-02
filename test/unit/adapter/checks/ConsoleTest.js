@@ -2,8 +2,8 @@ const expect = require('chai').expect;
 const webdriver = require('selenium-webdriver');
 const Level = webdriver.logging.Level;
 
-const Driver = require('../../TestDriver');
-const Console = require('../../../lib/adapter/checks/Console');
+const Driver = require('../../../TestDriver');
+const Console = require('../../../../lib/adapter/checks/Console');
 
 describe('Console', function() {
     var driver;
