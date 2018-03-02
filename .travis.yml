@@ -15,6 +15,6 @@ script:
   - npm run lint
   - nyc --reporter=lcov mocha --recursive test/unit
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  - codecov --clear --flags unittests
+  - codecov --clear --flags "unittests"
   - nyc --reporter=lcov mocha --recursive test/system
-  - codecov --clear --flags systemtests
+  - codecov --clear --flags "systemtests"
