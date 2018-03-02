@@ -7,9 +7,9 @@ chai.use(sinonChai);
 
 const expect = chai.expect;
 
-const KingLouie = require('../lib/KingLouie');
-const App = require('./TestApp');
-const Driver = require('./TestDriver');
+const KingLouie = require('../../lib/KingLouie');
+const App = require('../TestApp');
+const Driver = require('../TestDriver');
 
 describe('KingLouie', function() {
     var driver;
