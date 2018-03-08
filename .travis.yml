@@ -4,7 +4,6 @@ node_js:
 
 install:
   - npm install
-  - npm install -g codecov
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -15,6 +14,6 @@ script:
   - npm run lint
   - nyc --reporter=lcov mocha --recursive test/unit
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  - codecov --flags "unittests" --clear
+  - bash <(curl -s https://codecov.io/bash) -C -F unittests
   - nyc --reporter=lcov mocha --recursive test/system
-  - codecov --flags "systemtests" --clear
+  - bash <(curl -s https://codecov.io/bash) -C -F systemtests
