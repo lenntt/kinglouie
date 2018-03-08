@@ -1,4 +1,5 @@
 .nyc_output/
+debug.log
 
 node_modules/**
 coverage/**

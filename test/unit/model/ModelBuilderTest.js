@@ -1,10 +1,10 @@
 const expect = require('chai').expect;
 
-const Label = require('../../lib/model/Label');
-const InstantiatedLabel = require('../../lib/model/InstantiatedLabel');
-const Trace = require('../../lib/model/Trace');
+const Label = require('../../../lib/model/Label');
+const InstantiatedLabel = require('../../../lib/model/InstantiatedLabel');
+const Trace = require('../../../lib/model/Trace');
 
-const ModelBuilder = require('../../lib/model/ModelBuilder');
+const ModelBuilder = require('../../../lib/model/ModelBuilder');
 
 describe('ModelBuilder', function() {
     var builder;

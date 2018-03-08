@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+                <meta charset="utf-8">
+                <body>
+                    <script src="http://d3js.org/d3.v4.min.js"></script>
+                    <script src="https://unpkg.com/viz.js@1.8.0/viz.js" type="javascript/worker"></script>
+                    <script src="https://unpkg.com/d3-graphviz@1.0.1/build/d3-graphviz.min.js"></script>
+                    <div id="graph" style="text-align: center;"></div>
+                    <script>
+                        d3.select("#graph").graphviz()
+                            .totalMemory(536870912)
+                            .fade(false)
+                            .renderDot(`digraph {
+            "_initialState" [style="invisible"]
+            "_initialState" -> "start"
+            
+"start" -> "_0" [label="?preamble\ndescription == go to http://www.google.com/#hl=en" color="black"]
+"_0" -> "https://www.google.nl/" [label="δ" color="black"]
+"https://www.google.nl/" -> "_1" [label="?click\ntext == Over\nclass == _Gs" color="black"]
+"https://www.google.nl/" -> "_11" [label="?click\ntext == Instellingen\nclass == _Gs\nid == fsettl" color="black"]
+"https://www.google.nl/" -> "_12" [label="?click\ntext == Adverteren\nclass == _Gs" color="black"]
+"https://www.google.nl/" -> "_19" [label="?click\ntext == Afbeeldingen\nclass == gb_P" color="black"]
+"https://www.google.nl/" -> "_21" [label="?click\ntext == Gmail\nclass == gb_P" color="black"]
+"https://www.google.nl/" -> "_31" [label="?click\ntext == Frysk" color="black"]
+"https://www.google.nl/" -> "_32" [label="?click\ntext == Oanmelde\nclass == gb_0f gb_Fa gb_Eb\nid == gb_70" color="black"]
+"https://www.google.nl/" -> "_41" [label="?click\nlabel == Input tools\nclass == gsst_a" color="black"]
+"https://www.google.nl/" -> "_42" [label="?click\ntext == k\nclass == vk-btn\nid == K75" color="black"]
+"https://www.google.nl/" -> "_43" [label="?click\ntext == ]\nclass == vk-btn\nid == K221" color="black"]
+"https://www.google.nl/" -> "_44" [label="?click\ntext == Ctrl + Alt\nclass == vk-btn\nid == K273" color="black"]
+"https://www.google.nl/" -> "_45" [label="?click\ntext == ɑ\nclass == vk-btn\nid == K65" color="black"]
+"https://www.google.nl/" -> "_46" [label="?click\ntext == e\nclass == vk-btn\nid == K69" color="black"]
+"https://www.google.nl/" -> "_47" [label="?click\ntext == 3\nclass == vk-btn\nid == K51" color="black"]
+"https://www.google.nl/" -> "_48" [label="?click\ntext == s\nclass == vk-btn\nid == K83" color="black"]
+"https://www.google.nl/" -> "_49" [label="?click\ntext == u\nclass == vk-btn\nid == K85" color="black"]
+"https://www.google.nl/" -> "_51" [label="?click\ntext == Advertising\nclass == _Gs" color="black"]
+"https://www.google.nl/" -> "_61" [label="?click\ntext == Google.com gebruiken\nclass == _Gs" color="black"]
+"https://www.google.nl/" -> "_65" [label="?click\ntext == Privacy\nclass == _Gs" color="black"]
+"_1" -> "https://www.google.nl/intl/nl_nl/about/" [label="δ" color="black"]
+"https://www.google.nl/intl/nl_nl/about/" -> "_2" [label="?click\ntext == Voorwaarden" color="black"]
+"https://www.google.nl/intl/nl_nl/about/" -> "_3" [label="?click" color="black"]
+"https://www.google.nl/intl/nl_nl/about/" -> "_5" [label="?click\ntext == Een uitleg van computervisie, Wat hebben zelfrijdende auto\'s, selfielenzen en streepjescodescanners met elkaar gemeen? In deze aflevering praat Nat met verschillende onderzoekers bij\nclass == carousel-slide-content" color="black"]
+"https://www.google.nl/intl/nl_nl/about/" -> "_7" [label="?click\ntext == Afbeeldingen en film" color="black"]
+"https://www.google.nl/intl/nl_nl/about/" -> "_8" [label="?click\ntext == 3D — @GOOGLENEDERLAND\nclass == post-link lazy-img-loaded" color="black"]
+"https://www.google.nl/intl/nl_nl/about/" -> "_9" [label="?click\ntext == Vacatures" color="black"]
+"_2" -> "https://www.google.nl/intl/nl_nl/about/" [label="δ" color="black"]
+"_3" -> "https://www.google.nl/intl/nl_nl/about/" [label="δ" color="black"]
+
+"_5" -> "https://www.google.nl/intl/nl_nl/about/" [label="δ" color="black"]
+
+"_7" -> "https://www.google.nl/intl/nl_nl/about/" [label="δ" color="black"]
+"_8" -> "https://www.google.nl/intl/nl_nl/about/" [label="δ" color="black"]
+"_9" -> "https://www.google.nl/intl/nl_nl/about/" [label="δ" color="black"]
+
+"_11" -> "https://www.google.nl/" [label="δ" color="black"]
+"_12" -> "https://www.google.nl/intl/nl_nl/ads/" [label="δ" color="black"]
+"https://www.google.nl/intl/nl_nl/ads/" -> "_13" [label="?click\ntext == OK, GOT IT\nclass == cookieBarButton cookieBarConsentButton" color="black"]
+"https://www.google.nl/intl/nl_nl/ads/" -> "_14" [label="?click\ntext == Advertenties" color="black"]
+"https://www.google.nl/intl/nl_nl/ads/" -> "_16" [label="?click\ntext == AdWords Express, De tool om een zoekadvertentie-campagne mee te starten. Speciaal voor bedrijven met weinig tijd of beperkte kennis.\nclass == ce-card light-gray position-rel" color="black"]
+"https://www.google.nl/intl/nl_nl/ads/" -> "_17" [label="?click" color="black"]
+"https://www.google.nl/intl/nl_nl/ads/" -> "_18" [label="?click\ntext == Google" color="black"]
+"_13" -> "https://www.google.nl/intl/nl_nl/ads/" [label="δ" color="black"]
+"_14" -> "https://www.google.nl/intl/nl_nl/ads/" [label="δ" color="black"]
+
+"_16" -> "https://www.google.nl/intl/nl_nl/ads/" [label="δ" color="black"]
+"_17" -> "https://www.google.nl/intl/nl_nl/ads/" [label="δ" color="black"]
+"_18" -> "https://www.google.nl/" [label="δ" color="black"]
+"_19" -> "https://www.google.nl/imghp" [label="δ" color="black"]
+
+
+"_21" -> "https://www.google.com/gmail/about/" [label="δ" color="black"]
+"_21" -> "https://www.google.com/gmail/about/" [label="!error_console\nmessage == https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.6_Oh42KNmBQ.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQE/rs=AGLTcCOLDThr61T0lUfV81vOOCnO7rxu2w/cb=gapi.loaded_0 163 Failed to execute \'postMessage' on 'DOMWindow': The target origin provided ('https://accounts.google.com') does not match the recipient window's origin ('https://www.google.com')." color="red"]
+"https://www.google.com/gmail/about/" -> "_22" [label="?click\ntext == CREATE AN ACCOUNT\nclass == hero_home__link__desktop" color="black"]
+"https://www.google.com/gmail/about/" -> "_23" [label="?click\nclass == link-face" color="black"]
+"https://www.google.com/gmail/about/" -> "_24" [label="?click\ntext == Privacy" color="black"]
+"https://www.google.com/gmail/about/" -> "_83" [label="?click\nclass == link-gplus" color="black"]
+"_22" -> "https://www.google.com/gmail/about/" [label="δ" color="black"]
+"_23" -> "https://www.google.com/gmail/about/" [label="δ" color="black"]
+"_24" -> "https://www.google.com/policies/privacy/" [label="δ" color="black"]
+"https://www.google.com/policies/privacy/" -> "_25" [label="?click\ntext == sensitive categories" color="black"]
+"https://www.google.com/policies/privacy/" -> "_29" [label="?click\ntext == Control" color="black"]
+"https://www.google.com/policies/privacy/" -> "_85" [label="?click\ntext == to make it easier to share things with people you know\nclass == highlight\nid == to-make-it-easier-to-share" color="black"]
+"_25" -> "https://www.google.com/policies/privacy/key-terms/" [label="δ" color="black"]
+"https://www.google.com/policies/privacy/key-terms/" -> "_26" [label="?click\ntext == Overview" color="black"]
+"_26" -> "https://www.google.com/policies/" [label="δ" color="black"]
+"https://www.google.com/policies/" -> "_27" [label="?click\ntext == Terms of Service" color="black"]
+"_27" -> "https://www.google.com/policies/terms/" [label="δ" color="black"]
+"https://www.google.com/policies/terms/" -> "_28" [label="?click\ntext == privacy policies" color="black"]
+"_28" -> "https://www.google.com/policies/privacy/" [label="δ" color="black"]
+"_29" -> "https://support.google.com/plus/" [label="!error_console\nmessage == https://realtimesupport.clients6.google.com/v2/customers/me/availabilities?alt=json&source=HELP_CENTER&client_version=1519808644576&key=AIzaSyB5V4SIBGmrqREm7kf2fBJgPcBMCdUrLzE - Failed to load resource: the server responded with a status of 401 ()" color="red"]
+
+
+"_31" -> "https://www.google.nl/" [label="δ" color="black"]
+"_32" -> "https://accounts.google.com/signin/v2/identifier" [label="δ" color="black"]
+"https://accounts.google.com/signin/v2/identifier" -> "_33" [label="?click\ntext == More options\nclass == c7fp5b FS4hgd t29vte nDKKZc NpwL8d\nid == ow206" color="black"]
+"https://accounts.google.com/signin/v2/identifier" -> "_34" [label="?click\ntext == Terms" color="black"]
+"https://accounts.google.com/signin/v2/identifier" -> "_36" [label="?click\ntext == FIERDER\nclass == O0WRkf zZhnYe e3Duub C0oVfc nDKKZc DL0QTb\nid == identifierNext" color="black"]
+"https://accounts.google.com/signin/v2/identifier" -> "_39" [label="?click\ntext == Forgot email?\nclass == O0WRkf oG5Srb HQ8yf C0oVfc nDKKZc NpwL8d vI53Cf" color="black"]
+"https://accounts.google.com/signin/v2/identifier" -> "_56" [label="?click\ntext == Meer opties\nclass == c7fp5b FS4hgd t29vte nDKKZc NpwL8d\nid == ow206" color="black"]
+"https://accounts.google.com/signin/v2/identifier" -> "_57" [label="?click\ntext == Voorwaarden" color="black"]
+"https://accounts.google.com/signin/v2/identifier" -> "_58" [label="?click\ntext == Privacy" color="black"]
+"_33" -> "https://accounts.google.com/signin/v2/identifier" [label="δ" color="black"]
+"_34" -> "https://accounts.google.com/signin/v2/identifier" [label="δ" color="black"]
+
+"_36" -> "https://accounts.google.com/signin/v2/identifier" [label="δ" color="black"]
+
+
+"_39" -> "https://accounts.google.com/signin/v2/usernamerecovery" [label="δ" color="black"]
+
+
+"_41" -> "https://www.google.nl/" [label="δ" color="black"]
+"_42" -> "https://www.google.nl/" [label="δ" color="black"]
+"_43" -> "https://www.google.nl/" [label="δ" color="black"]
+"_44" -> "https://www.google.nl/" [label="δ" color="black"]
+"_45" -> "https://www.google.nl/" [label="δ" color="black"]
+"_46" -> "https://www.google.nl/" [label="δ" color="black"]
+"_47" -> "https://www.google.nl/" [label="δ" color="black"]
+"_48" -> "https://www.google.nl/" [label="δ" color="black"]
+"_49" -> "https://www.google.nl/" [label="δ" color="black"]
+
+"_51" -> "https://www.google.nl/intl/fy_nl/ads/" [label="δ" color="black"]
+"https://www.google.nl/intl/fy_nl/ads/" -> "_52" [label="?click\ntext == Meer informatie\nclass == cta-signin" color="black"]
+"_52" -> "https://www.google.nl/intl/nl/ads/publisher/" [label="δ" color="black"]
+"https://www.google.nl/intl/nl/ads/publisher/" -> "_53" [label="?click\ntext == Blogger" color="black"]
+"_53" -> "https://www.blogger.com/about/" [label="δ" color="black"]
+"https://www.blogger.com/about/" -> "_54" [label="?click\ntext == INLOGGEN\nclass == sign-in ga-header-sign-in" color="black"]
+"https://www.blogger.com/about/" -> "_55" [label="?click\ntext == Inhoudsbeleid\nclass == ga-footer" color="black"]
+"_54" -> "https://www.blogger.com/about/" [label="δ" color="black"]
+"_55" -> "https://accounts.google.com/signin/v2/identifier" [label="δ" color="black"]
+"_56" -> "https://accounts.google.com/signin/v2/identifier" [label="δ" color="black"]
+"_57" -> "https://accounts.google.com/signin/v2/identifier" [label="δ" color="black"]
+"_58" -> "https://accounts.google.com/signin/v2/identifier" [label="δ" color="black"]
+
+
+"_61" -> "https://www.google.com/" [label="δ" color="black"]
+"https://www.google.com/" -> "_62" [label="?click\ntext == MIJ LATER HERINNEREN\nclass == _yKg _Ihg _Lhg\nid == cnsd" color="black"]
+"https://www.google.com/" -> "_63" [label="?click\ntext == Instellingen\nclass == _Gs\nid == fsettl" color="black"]
+"https://www.google.com/" -> "_64" [label="?click\ntext == English" color="black"]
+"https://www.google.com/" -> "_72" [label="?click\ntext == Business\nclass == _Gs" color="black"]
+"_62" -> "https://www.google.com/" [label="δ" color="black"]
+"_63" -> "https://www.google.com/" [label="δ" color="black"]
+"_64" -> "https://www.google.nl/" [label="δ" color="black"]
+"_65" -> "https://www.google.nl/intl/nl_nl/policies/privacy/" [label="δ" color="black"]
+"https://www.google.nl/intl/nl_nl/policies/privacy/" -> "_66" [label="?click\ntext == Servicevoorwaarden" color="black"]
+"_66" -> "https://www.google.nl/intl/nl_nl/policies/terms/regional.html" [label="δ" color="black"]
+"https://www.google.nl/intl/nl_nl/policies/terms/regional.html" -> "_67" [label="?click\ntext == voert u deze instructies uit" color="black"]
+"_67" -> "https://support.google.com/accounts/answer/58585" [label="!error_console\nmessage == https://realtimesupport.clients6.google.com/v2/customers/me/availabilities?alt=json&source=HELP_CENTER&client_version=1519808644576&key=AIzaSyB5V4SIBGmrqREm7kf2fBJgPcBMCdUrLzE - Failed to load resource: the server responded with a status of 401 (Unauthorized)" color="red"]
+"https://support.google.com/accounts/answer/58585" -> "_68" [label="?click\ntext == Help\nclass == title-link" color="black"]
+"_68" -> "https://support.google.com/accounts/" [label="!error_console\nmessage == https://realtimesupport.clients6.google.com/v2/customers/me/availabilities?alt=json&source=HELP_CENTER&client_version=1519808644576&key=AIzaSyB5V4SIBGmrqREm7kf2fBJgPcBMCdUrLzE - Failed to load resource: the server responded with a status of 401 (Unauthorized)" color="red"]
+"https://support.google.com/accounts/" -> "_69" [label="?click\ntext == Authenticatie in twee stappen" color="black"]
+"_69" -> "https://www.google.com/intl/nl/landing/2step/" [label="δ" color="black"]
+
+
+
+"_72" -> "https://www.google.com/services/" [label="δ" color="black"]
+"https://www.google.com/services/" -> "_73" [label="?click\ntext == Shopping Campaigns" color="black"]
+"https://www.google.com/services/" -> "_74" [label="?click\ntext == Analytics for Mobile Apps, Measure the end-to-end value of your app.\nclass == card-inner" color="black"]
+"https://www.google.com/services/" -> "_75" [label="?click\ntext == Universal App Campaigns, Promote your app to users on Google with the help of machine learning.\nclass == card-inner" color="black"]
+"https://www.google.com/services/" -> "_76" [label="?click\ntext == Google Analytics" color="black"]
+"_73" -> "https://www.google.com/services/" [label="δ" color="black"]
+"_74" -> "https://www.google.com/services/" [label="δ" color="black"]
+"_75" -> "https://www.google.com/services/" [label="δ" color="black"]
+"_76" -> "https://www.google.com/analytics/" [label="δ" color="black"]
+"https://www.google.com/analytics/" -> "_77" [label="?click\ntext == SIGN IN\nclass == nav-dropdown-trigger" color="black"]
+"https://www.google.com/analytics/" -> "_78" [label="?click\ntext == Google, Optimize
+Test and deliver more personal experiences on your site.\nclass == card-inner" color="black"]
+"_77" -> "https://www.google.com/analytics/" [label="δ" color="black"]
+"_78" -> "https://www.google.com/analytics/optimize/" [label="δ" color="black"]
+"https://www.google.com/analytics/optimize/" -> "_79" [label="?click\ntext == OK, GOT IT\nclass == cookieBarButton cookieBarConsentButton" color="black"]
+"_79" -> "https://www.google.com/analytics/optimize/" [label="δ" color="black"]
+
+
+
+"_83" -> "https://www.google.com/gmail/about/" [label="δ" color="black"]
+
+"_85" -> "https://www.google.com/policies/privacy/example/to-make-it-easier-to-share.html" [label="δ" color="black"]
+"https://www.google.com/policies/privacy/example/to-make-it-easier-to-share.html" -> "_86" [label="?click\ntext == Privacy" color="black"]
+"_86" -> "https://www.google.com/intl/en/policies/privacy/" [label="δ" color="black"]
+"https://www.google.com/intl/en/policies/privacy/" -> "_87" [label="?click\ntext == linked, by the Google Analytics customer or by Google, using Google technology, with information about visits to multiple sites\nclass == highlight\nid == linked-with-information-about-visits-to-multiple-sites" color="black"]
+"_87" -> "https://www.google.com/intl/en/policies/privacy/example/linked-with-information-about-visits-to-multiple-sites.html" [label="δ" color="black"]
+"https://www.google.com/intl/en/policies/privacy/example/linked-with-information-about-visits-to-multiple-sites.html" -> "_88" [label="?click\ntext == Google Product Privacy Guide" color="black"]
+"_88" -> "https://www.google.com/intl/en/policies/technologies/product-privacy/" [label="δ" color="black"]
+"https://www.google.com/intl/en/policies/technologies/product-privacy/" -> "_89" [label="?click\ntext == Set your payment method with a site or app" color="black"]
+"_89" -> "https://support.google.com/pay/answer/6298154" [label="!error_console\nmessage == https://realtimesupport.clients6.google.com/v2/customers/me/availabilities?alt=json&source=HELP_CENTER&client_version=1519808644576&key=AIzaSyB5V4SIBGmrqREm7kf2fBJgPcBMCdUrLzE - Failed to load resource: the server responded with a status of 401 (Unauthorized)" color="red"]
+
+        }`);
+                </script></body></html>

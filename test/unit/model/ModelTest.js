@@ -1,8 +1,8 @@
 const expect = require('chai').expect;
 
-const Model = require('../../lib/model/Model');
-const State = require('../../lib/model/State');
-const Label = require('../../lib/model/Label');
+const Model = require('../../../lib/model/Model');
+const State = require('../../../lib/model/State');
+const Label = require('../../../lib/model/Label');
 
 describe('Model', function() {
     var startState;
@@ -115,13 +115,13 @@ describe('Model', function() {
                 var label1 = new Label('label1');
                 var label2 = new Label('label2');
                 var state2 = new State('state2');
-                model.addTransition(startState, label1, state);
-                model.addTransition(state, label2, state2);
+                var transition1 = model.addTransition(startState, label1, state);
+                var transition2 = model.addTransition(state, label2, state2);
 
                 var path = model.findPath(state2);
                 expect(path).to.eql([
-                    label1,
-                    label2
+                    transition1,
+                    transition2
                 ]);
             });
         });
@@ -136,26 +136,26 @@ describe('Model', function() {
                 var state5 = new State('state5');
 
                 // Label1 is a straight path towards state5
-                model.addTransition(startState, label1, state);
-                model.addTransition(state, label1, state2);
+                var transition11 = model.addTransition(startState, label1, state);
+                var transition12 = model.addTransition(state, label1, state2);
                 model.addTransition(state2, label1, state3);
                 model.addTransition(state3, label1, state4);
-                model.addTransition(state4, label1, state5);
+                var transition15 = model.addTransition(state4, label1, state5);
                 model.addTransition(state5, label1, state5);
 
                 // Label2 adds some trickery
                 model.addTransition(startState, label2, startState);
                 model.addTransition(state, label2, startState);
-                model.addTransition(state2, label2, state4);
+                var transition23 = model.addTransition(state2, label2, state4);
                 model.addTransition(state3, label2, state);
                 model.addTransition(state4, label2, state4);
 
                 var path = model.findPath(state5);
                 expect(path).to.eql([
-                    label1,
-                    label1,
-                    label2,
-                    label1
+                    transition11,
+                    transition12,
+                    transition23,
+                    transition15
                 ]);
             });
         });

@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 
-const Label = require('../../lib/model/Label');
-const InstantiatedLabel = require('../../lib/model/InstantiatedLabel');
+const Label = require('../../../lib/model/Label');
+const InstantiatedLabel = require('../../../lib/model/InstantiatedLabel');
 
 describe('InstantiatedLabel', function() {
     var label;

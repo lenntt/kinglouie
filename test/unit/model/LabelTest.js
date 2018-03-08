@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-const Label = require('../../lib/model/Label');
+const Label = require('../../../lib/model/Label');
 
 describe('Label', function() {
     var label;

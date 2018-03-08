@@ -12,9 +12,9 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
-  - npm install
-  - npm run testWithCoverage
-
-after_script:
+  - npm run lint
+  - nyc --reporter=lcov mocha --recursive test/unit
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  - codecov
+  - codecov --flags=unittests --clear
+  - nyc --reporter=lcov mocha --recursive test/system
+  - codecov --flags=systemtests --clear
