@@ -46,9 +46,9 @@ describe('RandomClick', function() {
 
             var data = await clicker.execute();
 
-            expect(data).to.eql({
+            expect(data.toLabelData()).to.eql({
                 id: 'id1',
-                class: 'class1',
+                className: 'class1',
                 text: 'text1',
                 label: 'aria-label1'
             });
@@ -92,7 +92,7 @@ describe('RandomClick', function() {
                 this.skip();
             });
 
-            it('tries not to click the same element twice', async function() {
+            it('tries not to click the same element twice', function() {
                 this.skip();
             });
 

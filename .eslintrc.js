@@ -83,8 +83,7 @@ module.exports = {
         "id-length": "off",
         "id-match": "error",
         "implicit-arrow-linebreak": "error",
-        "indent": "error",
-        "indent-legacy": "error",
+        "indent": ["error", 4, {"SwitchCase": 1}],
         "init-declarations": "off",
         "jsx-quotes": "error",
         "key-spacing": "error",
@@ -231,7 +230,6 @@ module.exports = {
         "prefer-destructuring": "off",
         "prefer-numeric-literals": "error",
         "prefer-promise-reject-errors": "error",
-        "prefer-reflect": "error",
         "prefer-rest-params": "error",
         "prefer-spread": "error",
         "prefer-template": "off",
@@ -311,6 +309,12 @@ module.exports = {
             "no-invalid-this": "off",
             "no-magic-numbers": "off",
             "require-await": "off"
+        }
+
+    }, {
+        "files": ["samples/**"],
+        "rules": {
+            "no-console": "off",
         }
     }, {
         "files": ["test/Test*.js"],

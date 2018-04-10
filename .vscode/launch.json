@@ -24,7 +24,10 @@
         "type": "node",
         "request": "launch",
         "name": "Launch Google Sample",
-        "program": "${workspaceFolder}/samples/main.js"
+        "program": "${workspaceFolder}/samples/google/main.js",
+        "runtimeArgs": [
+            "--trace-warnings"
+        ]
     }
     ]
 }

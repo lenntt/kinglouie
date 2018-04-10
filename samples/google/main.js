@@ -47,18 +47,25 @@ async function main() {
     var kinglouie = new KingLouie(driver, app);
     kinglouie.loadTraces();
 
-    await kinglouie.swing({
-        maxTraces: 3,
-        maxDepth: 10
-    });
+    // await kinglouie.swing({
+    //     maxTraces: 5,
+    //     maxDepth: 10
+    // });
 
     kinglouie.saveTraces();
 
-    // console.log(kinglouie.traces[0].map(function(ilabel) {return ilabel.label.name;}));
-
     kinglouie.visualize('output/model.html');
 
-    console.log('"Finished successfully');
+    console.log('Finished learning successfully');
+
+    console.log('See if we can learned how to go to gmail/about (if fails, simply restart app to learn more states):');
+    var path = kinglouie.findPath('https://www.google.com/gmail/about/');
+    console.log(path.map(function(transition) {
+        return [transition.label.name, transition.guard];
+    }));
+    await kinglouie.rerun('https://www.google.com/gmail/about/');
+
+    console.log('Rerun completed');
 
     driver.quit();
 }
