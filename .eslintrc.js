@@ -236,7 +236,8 @@ module.exports = {
         "quote-props": "off",
         "quotes": [
             "error",
-            "single"
+            "single",
+            { "avoidEscape": true }
         ],
         "radix": "error",
         "require-await": "error",

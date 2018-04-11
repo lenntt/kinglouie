@@ -41,17 +41,15 @@ describe('RandomClick', function() {
             expect(element2Click).to.have.been.called;
         });
 
-        it('returns data of the element it clicked', async function() {
+        it('returns ElementData of the element it clicked', async function() {
             sinon.stub(driver, 'findElements').resolves([element1]);
 
             var data = await clicker.execute();
 
-            expect(data.toLabelData()).to.eql({
-                id: 'id1',
-                className: 'class1',
-                text: 'text1',
-                label: 'aria-label1'
-            });
+            expect(data).to.have.property('id', 'id1');
+            expect(data).to.have.property('className', 'class1');
+            expect(data).to.have.property('text', 'text1');
+            expect(data).to.have.property('label', 'aria-label1');
         });
 
         it('retries a click on another element when a click fails', async function() {
