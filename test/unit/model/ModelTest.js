@@ -127,29 +127,35 @@ describe('Model', function() {
         });
 
         describe('with a model that has multiple paths to states, including loops', function() {
-            it('returns the shortest path to the given state name', function() {
-                var label1 = new Label('label1');
-                var label2 = new Label('label2');
-                var state2 = new State('state2');
-                var state3 = new State('state3');
-                var state4 = new State('state4');
-                var state5 = new State('state5');
+            var label1, label2;
+            var state2, state3, state4, state5;
+            var transition11, transition12, transition15, transition23;
+
+            beforeEach(function() {
+                label1 = new Label('label1');
+                label2 = new Label('label2');
+                state2 = new State('state2');
+                state3 = new State('state3');
+                state4 = new State('state4');
+                state5 = new State('state5');
 
                 // Label1 is a straight path towards state5
-                var transition11 = model.addTransition(startState, label1, state);
-                var transition12 = model.addTransition(state, label1, state2);
+                transition11 = model.addTransition(startState, label1, state);
+                transition12 = model.addTransition(state, label1, state2);
                 model.addTransition(state2, label1, state3);
                 model.addTransition(state3, label1, state4);
-                var transition15 = model.addTransition(state4, label1, state5);
+                transition15 = model.addTransition(state4, label1, state5);
                 model.addTransition(state5, label1, state5);
 
                 // Label2 adds some trickery
                 model.addTransition(startState, label2, startState);
                 model.addTransition(state, label2, startState);
-                var transition23 = model.addTransition(state2, label2, state4);
+                transition23 = model.addTransition(state2, label2, state4);
                 model.addTransition(state3, label2, state);
                 model.addTransition(state4, label2, state4);
+            });
 
+            it('returns the shortest path to the given state name', function() {
                 var path = model.findPath(state5);
                 expect(path).to.eql([
                     transition11,
@@ -157,6 +163,32 @@ describe('Model', function() {
                     transition23,
                     transition15
                 ]);
+            });
+
+            describe('when specifying a start state', function() {
+                it('returns the shortest path to the given state name', function() {
+                    var path1 = model.findPath(state5, state2);
+                    expect(path1).to.eql([
+                        transition23,
+                        transition15
+                    ]);
+                });
+
+                it('returns an empty path if given startstate and endstate are the same', function() {
+                    expect(model.findPath(startState, startState)).to.eql([]);
+                    expect(model.findPath(state5, state5)).to.eql([]);
+                });
+
+                it('returns null if the given startstate is unreachable', function() {
+                    var unreachableState = model.addState(new State('unreachablestate'));
+                    expect(model.findPath(state5, unreachableState)).to.be.null;
+                });
+
+                it('throws if the given startstate is not in the model', function() {
+                    expect(function() {
+                        model.findPath(state5, 'unknownstate');
+                    }).to.throw(/must be in model/);
+                });
             });
         });
 
@@ -167,6 +199,12 @@ describe('Model', function() {
                 var path = model.findPath(state);
                 expect(path).to.be.null;
             });
+        });
+
+        it('throws if the given targetState is not in the model', function() {
+            expect(function() {
+                model.findPath('unknownstate');
+            }).to.throw(/must be in model/);
         });
     });
 

@@ -1,7 +1,10 @@
 const expect = require('chai').expect;
 
-const Label = require('../../../lib/model/Label');
 const InstantiatedLabel = require('../../../lib/model/InstantiatedLabel');
+
+const Label = require('../../../lib/model/Label');
+const State = require('../../../lib/model/State');
+const Transition = require('../../../lib/model/Transition');
 
 describe('InstantiatedLabel', function() {
     var label;
@@ -80,6 +83,22 @@ describe('InstantiatedLabel', function() {
             });
             expect(json._data).to.eql({param: 'value2'});
             expect(json._metadata.meta).to.equal('metavalue');
+        });
+    });
+
+    describe('fromTransition', function() {
+        it('returns an ilabel from a (uninstantiated) transition', function() {
+            label.addParameter('param');
+            var state1 = new State('state1');
+            var state2 = new State('state2');
+            var transition = new Transition(state1, label, state2);
+            transition.addCondition('param', 'value');
+
+            var ilabel = InstantiatedLabel.fromTransition(transition);
+
+            expect(ilabel).to.be.an.instanceof(InstantiatedLabel);
+            expect(ilabel.label).to.equal(label);
+            expect(ilabel.data).to.eql({'param': 'value'});
         });
     });
 });
