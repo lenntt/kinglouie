@@ -50,19 +50,21 @@ async function main() {
         .build();
 
     var kinglouie = new KingLouie(driver, app);
+    console.log('Loading previous traces');
     kinglouie.loadTraces();
+    console.log(`Traces loaded: ${kinglouie.traces.length}`);
 
+    console.log('Start Learning...');
     await kinglouie.swing({
         maxTraces: 5,
         maxDepth: 5
     });
 
+    console.log('Finished learning. Saving traces and model...');
     kinglouie.saveTraces();
-
     kinglouie.visualize('output/model.html');
-    console.log('Finished learning successfully');
 
-    console.log('See if we can learned how to go to gmail/about (if fails, simply restart app to learn more states):');
+    console.log('See if we can learned how to go to gmail/about (on failure, restart app to learn more states):');
     var path = kinglouie.findPath(new RegExp('.*gmail/about.*'));
     console.log(`Path found: ${path.length} steps`);
     console.log(path.map(function(transition) {
