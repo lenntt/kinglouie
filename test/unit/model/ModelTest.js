@@ -52,6 +52,26 @@ describe('Model', function() {
         });
     });
 
+    describe('#findState', function() {
+        beforeEach(function() {
+            model.addState(state);
+        });
+
+        it('returns the state with an that matches a given string', function() {
+            expect(model.findState('state')).to.equal(state);
+            expect(model.findState('art')).to.equal(startState);
+        });
+
+        it('returns the state that matches a given RegExp', function() {
+            expect(model.findState(/state/)).to.equal(state);
+            expect(model.findState(/s.+e/)).to.equal(state);
+        });
+
+        it('returns undefined if no state with the given pattern exists', function() {
+            expect(model.findState(/unknownstate/)).to.be.undefined;
+        });
+    });
+
     describe('#addLabel', function() {
         it('adds the given state and returns it', function() {
             expect(model.addLabel(label)).to.equal(label);

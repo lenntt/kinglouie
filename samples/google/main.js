@@ -35,7 +35,12 @@ const app = {
     },
 
     async determineState(driver) {
-        return await new StateStrategy(driver).fromUrl();
+        if (await new StateStrategy(driver).didLeavePage('google.com')) {
+            return 'ExternalPage';
+            // TODO: gracefully stop current swing
+        }
+        return await new StateStrategy(driver).fromUrl() + ':' +
+            await new StateStrategy(driver).numberOfElements('a,button,.button,[role="button"],[role="link"],[role="menuitem"]');
     }
 };
 
@@ -47,24 +52,24 @@ async function main() {
     var kinglouie = new KingLouie(driver, app);
     kinglouie.loadTraces();
 
-    // await kinglouie.swing({
-    //     maxTraces: 5,
-    //     maxDepth: 10
-    // });
+    await kinglouie.swing({
+        maxTraces: 5,
+        maxDepth: 5
+    });
 
     kinglouie.saveTraces();
 
     kinglouie.visualize('output/model.html');
-
     console.log('Finished learning successfully');
 
     console.log('See if we can learned how to go to gmail/about (if fails, simply restart app to learn more states):');
-    var path = kinglouie.findPath('https://www.google.com/gmail/about/');
+    var path = kinglouie.findPath(new RegExp('.*gmail/about.*'));
+    console.log(`Path found: ${path.length} steps`);
     console.log(path.map(function(transition) {
         return [transition.label.name, transition.guard];
     }));
-    await kinglouie.rerun('https://www.google.com/gmail/about/');
 
+    await kinglouie.rerun(new RegExp('.*gmail/about.*'));
     console.log('Rerun completed');
 
     driver.quit();

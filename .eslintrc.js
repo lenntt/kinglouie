@@ -110,7 +110,14 @@ module.exports = {
         ],
         "max-depth": "error",
         "max-len": "off",
-        "max-lines": "error",
+        "max-lines": [
+            "error",
+            {
+                "max": 300,
+                "skipBlankLines": true,
+                "skipComments": true
+            }
+        ],
         "max-nested-callbacks": "error",
         "max-statements": "off",
         "multiline-comment-style": [

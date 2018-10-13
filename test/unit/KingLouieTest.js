@@ -30,6 +30,7 @@ describe('KingLouie', function() {
             var traces = [1, 2, 3];
             kinglouie = new KingLouie(driver, app, traces);
             expect(kinglouie.traces).to.equal(traces);
+            expect(kinglouie.driver).to.equal(driver);
         });
 
         it('has no traces if none are given', function() {

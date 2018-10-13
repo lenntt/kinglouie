@@ -28,12 +28,19 @@ describe('ElementData', function() {
     describe('#toSelector', function() {
         it('returns an xpath selector that represents the element', function() {
             var selector = elementData.toSelector();
-            expect(selector.toString()).to.equal("By(xpath, //*[contains(@class, 'myClass') and @id='myId') and text()='myText' and @aria-label='myLabel'])");
+            expect(selector.toString()).to.equal("By(xpath, //*[contains(@class, 'myClass') and @id='myId' and text()='myText' and @aria-label='myLabel'])");
         });
         it('returns an "any" selector if there is no usable data', function() {
             elementData = new ElementData();
             var selector = elementData.toSelector();
             expect(selector.toString()).to.equal('By(xpath, //*[])');
+        });
+    });
+
+    describe('#toWeakSelector', function() {
+        it('returns an xpath selector that represents the element only by text and aria-label', function() {
+            var selector = elementData.toWeakSelector();
+            expect(selector.toString()).to.equal("By(xpath, //*[text()='myText' and @aria-label='myLabel'])");
         });
     });
 

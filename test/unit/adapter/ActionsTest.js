@@ -25,12 +25,13 @@ describe('Actions', function() {
             var ilabel = ILabels.click(elementData);
             var action = Actions.fromILabel(driver, app, ilabel);
             expect(action).to.be.an.instanceof(Click);
-            expect(action.selector.toString()).to.equal("By(xpath, //*[contains(@class, 'class') and @id='id') and text()='text' and @aria-label='label'])");
+            expect(action.selector.toString()).to.equal("By(xpath, //*[text()='text' and @aria-label='label'])");
         });
 
-        it('returns the app preamble method if label is premble', function() {
+        it('returns the app preamble method if label is preamble', function() {
             var ilabel = ILabels.preamble();
-            expect(Actions.fromILabel(driver, app, ilabel)).to.have.property('execute', app.preamble);
+            expect(Actions.fromILabel(driver, app, ilabel).execute).to.have.property('name', 'bound preamble');
+            // should test behavior, execute == app.preamble, but bound.
         });
 
         it('throws at any other label', function() {
