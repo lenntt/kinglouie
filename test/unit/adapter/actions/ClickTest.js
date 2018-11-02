@@ -56,7 +56,7 @@ describe('Click', function() {
         it('throws if selectors is not found within the timeout', async function() {
             sinon.stub(driver, 'findElement').withArgs(selector).resolves([]);
 
-            expect(clicker.execute()).to.be.rejectedWith(/no clickable elements found/);
+            expect(clicker.execute()).to.be.rejectedWith(/no clickable element for: mySelector/);
         });
     });
 });
