@@ -8,21 +8,29 @@ chai.use(sinonChai);
 const expect = chai.expect;
 
 const KingLouie = require('../../lib/KingLouie');
+
 const App = require('../TestApp');
 const Driver = require('../TestDriver');
+
+const RandomClick = require('../../lib/adapter/actions/RandomClick');
 
 describe('KingLouie', function() {
     var driver;
     var app;
     var kinglouie;
+    var clickStub;
+
     beforeEach(function() {
         driver = new Driver();
         app = new App();
 
         kinglouie = new KingLouie(driver, app);
 
-        // I dont like touching privates :(
-        sinon.stub(kinglouie._click, 'execute').returns({id: 'id', class: 'class', text: 'text', label: 'label'});
+        clickStub = sinon.stub(RandomClick.prototype, 'execute').returns({id: 'id', class: 'class', text: 'text', label: 'label'});
+    });
+
+    afterEach(function() {
+        clickStub.restore();
     });
 
     describe('constructor', function() {

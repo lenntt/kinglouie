@@ -10,8 +10,9 @@ const Element = require('../../TestElement');
 describe('ElementData', function() {
     var elementData;
     beforeEach(function() {
-        elementData = new ElementData('myText', 'myId', 'myClass', 'myLabel');
+        elementData = new ElementData('myText', 'myId', 'myClass', 'myLabel', 'myImage');
     });
+
 
     describe('#toLabelData', function() {
         it('returns a simplified object', function() {
@@ -20,7 +21,8 @@ describe('ElementData', function() {
                 'text': 'myText',
                 'id': 'myId',
                 'className': 'myClass',
-                'label': 'myLabel'
+                'label': 'myLabel',
+                'image': 'myImage'
             });
         });
     });
@@ -47,7 +49,7 @@ describe('ElementData', function() {
     describe('.fromWebElement (async)', function() {
         it('returns the ElementData from the WebElement', async function() {
             var element = new Element(1);
-            elementData = await ElementData.fromWebElement(element);
+            elementData = await ElementData.fromWebElement(element, false);
 
             expect(elementData).to.have.property('id', 'id1');
             expect(elementData).to.have.property('className', 'class1');
