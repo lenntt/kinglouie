@@ -1,3 +1,5 @@
+const TestDriver = require('./TestDriver');
+
 class TestElement {
     constructor(id) {
         this.id = id;
@@ -21,6 +23,10 @@ class TestElement {
 
     async isEnabled() {
         return Promise.resolve(true);
+    }
+
+    getDriver(driver) {
+        return driver || new TestDriver();
     }
 }
 

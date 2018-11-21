@@ -28,6 +28,15 @@
         "runtimeArgs": [
             "--trace-warnings"
         ]
+    },
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch GitHub Sample",
+        "program": "${workspaceFolder}/samples/github/main.js",
+        "runtimeArgs": [
+            "--trace-warnings"
+        ]
     }
     ]
 }

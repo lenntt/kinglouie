@@ -38,6 +38,7 @@
     "chai": "^4.2.0",
     "chromedriver": "^2.43.1",
     "d3-graphviz": "^1.6.3",
+    "pngjs": "^3.3.3",
     "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
