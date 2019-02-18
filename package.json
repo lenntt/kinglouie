@@ -31,7 +31,7 @@
     "mocha": "^4.1.0",
     "nyc": "^11.9.0",
     "sinon": "^4.5.0",
-    "sinon-chai": "^2.14.0"
+    "sinon-chai": "^3.3.0"
   },
   "dependencies": {
     "axe-webdriverjs": "^1.3.0",
