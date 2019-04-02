@@ -35,7 +35,7 @@ const app = {
     async determineState(driver) {
         if (await new StateStrategy(driver).didLeavePage('github.com')) {
             return 'ExternalPage';
-            // TODO: gracefully stop current swing
+            // TODO: gracefully stop current swinging
         }
         return await new StateStrategy(driver).fromUrl() + ':' +
             await new StateStrategy(driver).numberOfElements('a,button,.button,[role="button"],[role="link"],[role="menuitem"]');
