@@ -1,4 +1,4 @@
 component_depth: 1
 
 exclude:
-- .eslintrc.js
+- \.eslintrc\.js
