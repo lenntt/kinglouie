@@ -8,7 +8,6 @@ const Trace = require('../../lib/model/Trace');
 const StateStrategy = require('../../lib/adapter/StateStrategy');
 const ILabels = require('../../lib/adapter/ILabels');
 const ConsoleCheck = require('../../lib/adapter/checks/Console');
-// const A11YCheck = require('../../lib/adapter/checks/A11Y');
 
 const QUIESCENCE_TIMEOUT = 1000;
 
@@ -29,7 +28,6 @@ const app = {
         await new Promise(function(resolve) { setTimeout(resolve, QUIESCENCE_TIMEOUT); });
 
         var outputTrace = await new ConsoleCheck(driver).check();
-        // outputTrace.addAll(await new A11YCheck(driver).check());
 
         return Promise.resolve(outputTrace);
     },
