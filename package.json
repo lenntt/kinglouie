@@ -1,0 +1,24 @@
+{
+  "name": "kinglouie",
+  "version": "1.0.0",
+  "description": "smart monkey tester",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lenntt/kinglouie.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lenntt/kinglouie/issues"
+  },
+  "homepage": "https://github.com/lenntt/kinglouie#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.7",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.4"
+  }
+}
