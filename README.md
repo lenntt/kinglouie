@@ -1,5 +1,4 @@
 # KingLouie
-"TODO"
 
 Starting fresh as an ensemble programming project.
 You can find old implementations on the branches 'master' and 'cypress'.

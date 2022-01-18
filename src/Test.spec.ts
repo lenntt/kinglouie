@@ -1,5 +1,7 @@
+import { test } from './Test';
+
 describe('test', () => {
-  it('true must be true', () => {
-    expect(true).toBe(true);
+  it('is 42', () => {
+    expect(test()).toBe(42);
   });
 });
